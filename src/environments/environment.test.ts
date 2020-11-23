@@ -5,20 +5,18 @@
 import { EnvironementModel } from './environment.model';
 
 export const environment = {
-    production: false,
+    production: true,
 };
 
-const local = 'http://localhost:8090/';
-
 export const config: EnvironementModel = {
-    environmentName: 'Local Environment',
-    ionicEnvName: 'local',
-    APIEndpoint: local,
-    classAPIEndpoint: local + 'class/',
-    studentAPIEndpoint: local + 'student/',
-    familyAPIEndpoint: local + 'family/',
-    techniqueAPIEndpoint: local + 'technique/',
-    tagAPIEndpoint: local + 'tag/',
+    environmentName: 'Test Environment',
+    ionicEnvName: 'test',
+    APIEndpoint: 'http://localhost:8080/',
+    classAPIEndpoint: 'http://localhost:8080/class/',
+    studentAPIEndpoint: 'http://localhost:8080/student/',
+    familyAPIEndpoint: 'http://localhost:8080/family/',
+    techniqueAPIEndpoint: 'http://localhost:8080/technique/',
+    tagAPIEndpoint: 'http://localhost:8080/tag/',
     getClassTime: 15000,
     aws_cognito_region: 'ap-southeast-2',
     aws_user_pools_id: 'ap-southeast-2_xwJzu6o5o',
