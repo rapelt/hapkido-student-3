@@ -1,0 +1,7 @@
+{
+  "name": "hapkido-student-3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
