@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "12.0"
+cache:
+  directories:
+    - "node_modules"
+before_script:
+  - 'echo $TRAVIS_BRANCH'
+  - 'echo $TRAVIS_PULL_REQUEST'
+jobs:
+  include:
+    - stage: tests
+      script: "npm run lint && npm run test"
