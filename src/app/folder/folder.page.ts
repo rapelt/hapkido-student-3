@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { config, environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-folder',
@@ -8,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FolderPage implements OnInit {
   public folder: string;
+  public env = config.ionicEnvName;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
