@@ -7,6 +7,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:staging": "ng run app:build:staging --stats-json",
+    "build:prod": "ng build --prod",
+    "build:test": "ng run app:build:test --stats-json",
+    "build:dev": "ng run app:build:dev",
     "local": "ng serve",
     "staging": "ng run app:serve:staging",
     "prod": "ng run app:serve:production",
@@ -25,7 +29,8 @@
     "serve:ci": "angular-http-server --path www -a localhost -p 8000",
     "lighthouse:run": "lighthouse http://localhost:4200 --output-path=./reports/lighthouse/lighthouse-results.json --output=json",
     "lighthouse:ci": "lighthouse-ci http:localhost:4200 --score=-1 --report",
-    "lighthouse:report": "./node_modules/.bin/ts-node ./reports/lighthouse/lighthouse-reporter.ts"
+    "lighthouse:report": "./node_modules/.bin/ts-node ./reports/lighthouse/lighthouse-reporter.ts",
+    "analyse-package-size": "webpack-bundle-analyzer ./www/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
@@ -71,7 +76,8 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.5",
+    "webpack-bundle-analyzer": "^4.1.0"
   },
   "description": "An Ionic project"
 }
