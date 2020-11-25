@@ -18,8 +18,7 @@ jobs:
         on: staging
         provider: s3
         access_key_id: $AWS_ACCESS_KEY
-        secret_access_key:
-          secure: $AWS_SECRET_KEY
+        secret_access_key: $AWS_SECRET_KEY
         bucket: hapkido-student-staging
         region: ap-southeast-2
         local-dir: www
@@ -31,8 +30,7 @@ jobs:
         on: prod
         provider: s3
         access_key_id: $AWS_ACCESS_KEY
-        secret_access_key:
-          secure: $AWS_SECRET_KEY
+        secret_access_key: $AWS_SECRET_KEY
         bucket: hapkido-student-site
         region: ap-southeast-2
         local-dir: www
