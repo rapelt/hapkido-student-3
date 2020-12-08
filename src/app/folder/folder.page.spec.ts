@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { FolderPage } from './folder.page';
 
-describe('FolderPage', () => {
+xdescribe('FolderPage', () => {
   let component: FolderPage;
   let fixture: ComponentFixture<FolderPage>;
 

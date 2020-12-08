@@ -1,0 +1,48 @@
+.question {
+  margin: 20px;
+  background: #eaeaea;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.reply {
+  margin-left: 70px;
+}
+
+.student-name {
+  font-weight: bold;
+}
+
+.question-text {
+  margin-left: 10px;
+}
+
+.text-content {
+  margin-left: 12px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  ion-button {
+    --background: var(--ion-background-color, #eaeaea);
+  }
+}
+
+ion-item {
+  border-radius: 10px;
+}
+
+app-validation-error-message {
+
+}
+
+.liked {
+  color: blue;
+}
+
+ion-badge {
+  margin-left: 10px;
+}

@@ -1,0 +1,24 @@
+<div class="question" [ngClass]="{reply: isReply}">
+    <div class="text-content">
+        <ion-text class="student-name">{{question?.student}}: </ion-text>
+        <ion-text class="question-text" >{{question?.question_text}}</ion-text>
+    </div>
+    <div class="buttons">
+        <ion-button *ngIf="!studentLiked(question)" (click)="like(question)" fill="none" size="small">Like
+            <ion-badge *ngIf="question?.likes.length > 0">{{question?.likes.length}}</ion-badge>
+        </ion-button>
+        <ion-button class="liked" *ngIf="studentLiked(question)" (click)="removeLike(question)" fill="none" size="small">Like
+            <ion-badge *ngIf="question?.likes.length > 0">{{question?.likes.length}}</ion-badge>
+        </ion-button>
+        <ion-button *ngIf="canReply" fill="none" size="small" (click)="replyActive = true">reply</ion-button>
+        <ion-note>{{getDate(question)}}</ion-note>
+    </div>
+    <form [formGroup]="replyForm">
+        <ion-item *ngIf="replyActive">
+            <ion-input (keypress)="enter($event)" [formControlName]="'reply'"  placeholder="Write a reply..." autocorrect="true" color="primary" ></ion-input>
+            <ion-button (click)="save()">Add</ion-button>
+        </ion-item>
+        <app-validation-error-message [formElement]="replyForm.get('reply')" [validationMessages]="[{type: 'empty',  message :'Must have some text'}]" [saveAttempted]="saveAttempted"></app-validation-error-message>
+    </form>
+</div>
+

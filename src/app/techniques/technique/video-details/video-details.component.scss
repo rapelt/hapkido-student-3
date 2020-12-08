@@ -1,0 +1,39 @@
+.video-details {
+  margin: 20px 20px 0px 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .button-group {
+    align-self: flex-end;
+  }
+
+  .description {
+    margin: 10px 0px 10px 0px;
+  }
+
+  .video-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .favourite {
+      font-size: 20px;
+    }
+
+
+
+    .video-title {
+      font-size: 26px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  app-grade-badge {
+    margin-left: 10px;
+  }
+}

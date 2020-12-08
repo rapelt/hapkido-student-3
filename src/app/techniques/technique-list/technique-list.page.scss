@@ -1,0 +1,34 @@
+
+
+ion-card-header{
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+  width: 100%;
+}
+
+app-grade-badge, ion-card-title {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (min-width: 600px) {
+  ion-card {
+    width: 400px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+}

@@ -1,0 +1,17 @@
+
+<form [formGroup]="questionForm">
+  <ion-item>
+    <ion-textarea [formControlName]="'question'"  placeholder="Add a question"></ion-textarea>
+    <ion-button (click)="save()" color="primary" fill="outline">Add</ion-button>
+  </ion-item>
+  <app-validation-error-message [formElement]="questionForm.get('question')" [validationMessages]="[{type: 'empty',  message :'Must have some text'}]" [saveAttempted]="saveAttempted"></app-validation-error-message>
+
+</form>
+<div *ngFor="let question of sortedQuestions">
+  <app-question [canReply]="true" [question]="question"></app-question>
+  <div *ngFor="let reply of question.reply">
+    <app-question [canReply]="false" [question]="reply" [isReply]="true"></app-question>
+  </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+.segment-group {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+ion-segment {
+  width: 300px;
+}
+
+ion-progress-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grades-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-locked-techniques, .number-unlocked-techniques, .avaliable-techniques {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
