@@ -10,6 +10,7 @@ import { TechniqueStoreServiceMock } from '../../+state/Techniques/technique-sto
 import { SettingsStoreService } from '../../+state/Settings/settings-store.service';
 import { SettingsStoreServiceMock } from '../../+state/Settings/settings-store.service.mock';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TechniquePage', () => {
     let component: TechniquePage;
@@ -18,6 +19,7 @@ describe('TechniquePage', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [TechniquePage],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 TechniqueSelector,
                 {
@@ -39,10 +41,7 @@ describe('TechniquePage', () => {
                     },
                 },
             ],
-            imports: [
-                RouterTestingModule.withRoutes([]),
-                IonicModule.forRoot(),
-            ],
+            imports: [RouterTestingModule.withRoutes([]), IonicModule],
         }).compileComponents();
 
         fixture = TestBed.createComponent(TechniquePage);

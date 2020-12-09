@@ -68,7 +68,6 @@ export class QuestionComponent implements OnInit {
     }
 
     enter(event) {
-        console.log(event.key);
         if (event.key === 'Enter') {
             this.save();
         }

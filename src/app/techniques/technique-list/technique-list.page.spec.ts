@@ -9,6 +9,7 @@ import { TechniqueStoreService } from '../../+state/Techniques/technique-store.s
 import { TechniqueStoreServiceMock } from '../../+state/Techniques/technique-store.service.mock';
 import { TechniqueListSelector } from './technique-list.selector';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TechniqueListPage', () => {
     let component: TechniqueListPage;
@@ -16,6 +17,7 @@ describe('TechniqueListPage', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             declarations: [TechniqueListPage],
             providers: [
                 TechniqueListSelector,
@@ -34,10 +36,7 @@ describe('TechniqueListPage', () => {
                     },
                 },
             ],
-            imports: [
-                IonicModule.forRoot(),
-                RouterTestingModule.withRoutes([]),
-            ],
+            imports: [IonicModule, RouterTestingModule.withRoutes([])],
         }).compileComponents();
 
         fixture = TestBed.createComponent(TechniqueListPage);
@@ -55,7 +54,6 @@ describe('TechniqueListPage', () => {
         component.getTitle();
 
         component.title.subscribe((t) => {
-            console.log(t);
             expect(t).toEqual('Yellow 3');
             done();
         });
@@ -87,7 +85,6 @@ describe('TechniqueListPage', () => {
         component.getTitle();
 
         component.title.subscribe((t) => {
-            console.log(t);
             expect(t).toEqual('Son Mok Su');
             done();
         });

@@ -6,6 +6,7 @@ import { TechniqueListSelector } from '../../technique-list/technique-list.selec
 import { TechniqueStoreService } from '../../../+state/Techniques/technique-store.service';
 import { TechniqueStoreServiceMock } from '../../../+state/Techniques/technique-store.service.mock';
 import { techniqueTestData } from '../../../zTestData/techniques.test.data';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('VideoDetailsComponent', () => {
     let component: VideoDetailsComponent;
@@ -13,6 +14,7 @@ describe('VideoDetailsComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             declarations: [VideoDetailsComponent],
             providers: [
                 TechniqueListSelector,
@@ -21,7 +23,7 @@ describe('VideoDetailsComponent', () => {
                     useClass: TechniqueStoreServiceMock,
                 },
             ],
-            imports: [IonicModule.forRoot()],
+            imports: [IonicModule],
         }).compileComponents();
 
         fixture = TestBed.createComponent(VideoDetailsComponent);

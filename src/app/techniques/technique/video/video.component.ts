@@ -75,7 +75,6 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
         };
 
         this.player = videojs(this.target.nativeElement, options, () => {
-            console.log('onPlayerReady', this);
             // this.isFullscreen_ = true;
             // console.log(this.isFullscreen_);
         });
@@ -85,7 +84,6 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
         });
 
         this.player.on('fullscreenchange', () => {
-            console.log(this.player.isFullscreen_);
             if (this.player.isFullscreen_) {
                 this.setLandscape();
             } else {
@@ -94,7 +92,6 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
         });
 
         this.player.on('ended', (event) => {
-            console.log('ended', event);
             this.viewSaved = false;
         });
     }
@@ -112,10 +109,7 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     saveView() {
-        console.log('Save Video', this.viewSaved);
         if (!this.viewSaved) {
-            console.log('Saving', this.viewSaved);
-
             this.videoSelector.addView(this.media.id);
             this.viewSaved = true;
         }
@@ -142,8 +136,6 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        console.log(changes);
-
         this.media = changes.media.currentValue;
 
         const options = {
@@ -159,8 +151,6 @@ export class VideoComponent implements OnInit, OnDestroy, OnChanges {
                 this.media.file_name +
                 '.0000000.jpg',
         };
-
-        console.log(this.player);
 
         if (this.player) {
             this.player.src(options.sources);

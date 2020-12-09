@@ -10,9 +10,7 @@ export class SettingsStoreServiceMock {
         isDesktop: boolean;
         isMobileWeb: boolean;
         isTablet: boolean;
-    }) {
-        console.log(device);
-    }
+    }) {}
 
     stateChanged = of(this.getState());
 

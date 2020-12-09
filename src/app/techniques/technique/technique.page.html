@@ -17,7 +17,7 @@
 
       <div class="more-info">
         <div class="segment-group">
-          <ion-segment mode="android" color="primary" [value]="segment" (ionChange)="segmentChanged($event)">
+          <ion-segment mode="md" color="primary" [value]="segment" (ionChange)="segmentChanged($event)">
             <ion-segment-button value="photos" *ngIf="technique.media.photos.length > 0">
               <ion-label>Photos</ion-label>
             </ion-segment-button>

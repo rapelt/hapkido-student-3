@@ -9,6 +9,7 @@ import { TechniqueStoreServiceMock } from '../../../+state/Techniques/technique-
 import { QuestionSelector } from './question.selector';
 import { AuthStoreService } from '../../../+state/Authentication/auth-store.service';
 import { AuthStoreServiceMock } from '../../../+state/Authentication/auth-store.service.mock';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('QuestionComponent', () => {
     let component: QuestionComponent;
@@ -16,6 +17,7 @@ describe('QuestionComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             declarations: [QuestionComponent],
             providers: [
                 QuestionSelector,
@@ -28,7 +30,7 @@ describe('QuestionComponent', () => {
                     useClass: AuthStoreServiceMock,
                 },
             ],
-            imports: [IonicModule.forRoot(), ReactiveFormsModule, FormsModule],
+            imports: [IonicModule, ReactiveFormsModule, FormsModule],
         }).compileComponents();
 
         fixture = TestBed.createComponent(QuestionComponent);

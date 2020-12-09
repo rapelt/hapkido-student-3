@@ -26,7 +26,6 @@ export class TechniqueSelector {
     getAllTechniqueSets(
         type: 'set' | 'color'
     ): Observable<TechniqueSetData[] | null> {
-        console.log(type);
         return this.techniquesStoreService.stateChanged.pipe(
             map((state): TechniqueSetData[] => {
                 const techniques = state?.techniques?.techniques;

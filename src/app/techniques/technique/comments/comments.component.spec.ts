@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentSelector } from './comment.selector';
 import { TechniqueStoreService } from '../../../+state/Techniques/technique-store.service';
 import { TechniqueStoreServiceMock } from '../../../+state/Techniques/technique-store.service.mock';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('CommentsComponent', () => {
     let component: CommentsComponent;
@@ -14,6 +15,7 @@ describe('CommentsComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [CommentsComponent],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 CommentSelector,
                 {
@@ -21,7 +23,7 @@ describe('CommentsComponent', () => {
                     useClass: TechniqueStoreServiceMock,
                 },
             ],
-            imports: [IonicModule.forRoot(), ReactiveFormsModule, FormsModule],
+            imports: [IonicModule, ReactiveFormsModule, FormsModule],
         }).compileComponents();
 
         fixture = TestBed.createComponent(CommentsComponent);

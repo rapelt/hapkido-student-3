@@ -61,8 +61,6 @@ export class TechniquePage implements OnInit, OnDestroy {
     }
 
     goToNextVideo(event, mediaLength) {
-        console.log(event);
-
         this.videoIndex = this.technique.media.videos.findIndex((m) => {
             return m.id === event;
         });

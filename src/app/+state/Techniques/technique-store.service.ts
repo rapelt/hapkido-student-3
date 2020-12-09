@@ -13,7 +13,7 @@ import { QuestionModel } from '../../common/models/question.model';
 @Injectable()
 export class TechniqueStoreService extends ObservableStore<StateModel> {
     constructor(private techniqueHttp: TechniquesHttp) {
-        super({ trackStateHistory: true, logStateChanges: true });
+        super({ trackStateHistory: false, logStateChanges: false });
     }
 
     private fetchTechniques(username) {
@@ -22,8 +22,6 @@ export class TechniqueStoreService extends ObservableStore<StateModel> {
                 const playlist = techniques
                     .filter((t) => t.isFavourite)
                     .map((t) => t.id);
-
-                console.log('playlist', playlist);
 
                 const state: TechniquesStoreModel = {
                     techniques: techniques,

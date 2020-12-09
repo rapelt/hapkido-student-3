@@ -9,7 +9,6 @@ export class VideoSelector {
 
     constructor(private techniquesStoreService: TechniqueStoreService) {}
     addView(mediaId) {
-        console.log('Saved View');
         this.techniquesStoreService.updateViews(mediaId);
     }
 }

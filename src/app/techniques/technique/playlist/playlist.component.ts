@@ -1,14 +1,5 @@
-import {
-    Component,
-    ElementRef,
-    EventEmitter,
-    Input,
-    OnInit,
-    Output,
-    ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MediaModel } from '../../../common/models/media';
-import { DeviceModel } from '../../../common/models/device.model';
 import { TechniqueModel } from '../../../common/models/technique';
 import { Router } from '@angular/router';
 

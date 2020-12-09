@@ -9,6 +9,7 @@ import { TechniqueModel } from '../../common/models/technique';
 import { StateModel } from '../../+state/State/state.model';
 import { getInitialState } from '../../+state/State/initial-state';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TechniquesSetListPage', () => {
     let component: TechniquesPage;
@@ -24,15 +25,13 @@ describe('TechniquesSetListPage', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             declarations: [TechniquesPage],
             providers: [
                 TechniqueSelector,
                 { provide: TechniqueStoreService, useValue: storeSpy },
             ],
-            imports: [
-                IonicModule.forRoot(),
-                RouterTestingModule.withRoutes([]),
-            ],
+            imports: [IonicModule, RouterTestingModule.withRoutes([])],
         }).compileComponents();
 
         fixture = TestBed.createComponent(TechniquesPage);

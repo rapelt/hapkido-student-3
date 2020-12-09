@@ -36,7 +36,7 @@
 //                 VideoSelector,
 //                 { provide: Platform, useValue: platformSpy },
 //             ],
-//             imports: [IonicModule.forRoot()],
+//             imports: [IonicModule],
 //         }).compileComponents();
 //
 //         fixture = TestBed.createComponent(VideoComponent);

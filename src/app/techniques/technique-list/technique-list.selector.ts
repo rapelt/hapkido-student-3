@@ -58,7 +58,6 @@ export class TechniqueListSelector {
     }
 
     setPlaylist() {
-        console.log(this.sortedData);
         const ids = this.sortedData.map((t) => {
             return t.id;
         });

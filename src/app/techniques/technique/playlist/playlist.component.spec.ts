@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PlaylistComponent } from './playlist.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('PlaylistComponent', () => {
     let component: PlaylistComponent;
@@ -11,10 +12,8 @@ describe('PlaylistComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [PlaylistComponent],
-            imports: [
-                IonicModule.forRoot(),
-                RouterTestingModule.withRoutes([]),
-            ],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            imports: [IonicModule, RouterTestingModule.withRoutes([])],
         }).compileComponents();
 
         fixture = TestBed.createComponent(PlaylistComponent);
