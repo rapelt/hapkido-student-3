@@ -1,0 +1,32 @@
+.technique-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .more-info {
+    margin: 20px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    app-playlist {
+      width: 30%;
+    }
+
+    .main-video {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    app-playlist {
+      width: 100%;
+    }
+
+    .main-video {
+      width: 100%;
+    }
+  }
+
+}
+
+

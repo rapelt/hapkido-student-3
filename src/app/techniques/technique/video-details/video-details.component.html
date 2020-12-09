@@ -1,0 +1,19 @@
+<div class="video-details">
+  <div class="video-header">
+    <div class="video-title">
+      <div>
+        {{technique.title}}
+        <app-grade-badge [grade]="technique.grade" [nameLength]="'short'"></app-grade-badge>
+      </div>
+    </div>
+  </div>
+  <div class="metatdata"><ion-note>{{getViews()}} views</ion-note></div>
+  <div class="description" *ngIf="technique.description"><ion-text>{{technique.description}}</ion-text></div>
+
+  <div class="button-group">
+    <ion-button (click)="addFavourite(technique.id)" class="favourite" fill="none" *ngIf="!technique.isFavourite"><ion-icon name="star-outline"></ion-icon></ion-button>
+    <ion-button (click)="removeFavourite(technique.id)" class="favourite" fill="none" *ngIf="technique.isFavourite"><ion-icon name="star"></ion-icon></ion-button>
+    <ion-button (click)="learnTechnique(technique.id)" class="learn" fill="outline" *ngIf="technique.isUnwatched">Learnt</ion-button>
+    <ion-button (click)="unlearnTechnique(technique.id)" class="learn" color="danger" fill="outline" *ngIf="!technique.isUnwatched">Oops, I Forgot</ion-button>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="backGoTo(technique?.backLink)" routerDirection="back" class="cy-back-button">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{technique?.technique?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="technique-page" *ngIf="technique !== null">
+    <div class="main-video">
+      <app-video [ngClass]="{ 'my-desktop': device.isDesktop}" *ngIf="technique.media.videos.length > 0" [device]="device" [media]="technique.media.videos[videoIndex]"></app-video>
+      <app-video-details [technique]="technique.technique"></app-video-details>
+
+      <div class="more-info">
+        <div class="segment-group">
+          <ion-segment mode="md" color="primary" [value]="segment" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="photos" *ngIf="technique.media.photos.length > 0">
+              <ion-label>Photos</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="comments">
+              <ion-label>Questions</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="other" *ngIf="width > 1000">
+              <ion-label>Other</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="playlist" *ngIf="width < 1000">
+              <ion-label>Playlist</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+
+        <app-photos [photos]="technique.media.photos" *ngIf="segment === 'photos'"></app-photos>
+        <app-comments [questions]="technique.technique.questions" [techniqueId]="id" *ngIf="segment === 'comments'"></app-comments>
+        <app-other [technique]="technique.technique" [media]="technique.media" *ngIf="segment === 'other'"></app-other>
+      </div>
+
+
+    </div>
+
+    <app-playlist
+            *ngIf="(width <  1000 && segment === 'playlist') || width > 1000"
+            [videos]="technique.media.videos"
+            [currentVideo]="technique.media.videos[videoIndex]?.id"
+            (nextVideo)="goToNextVideo($event, technique.media.videos.length)"
+            [nextTechniques]="technique.media.playlist"
+    ></app-playlist>
+
+
+  </div>
+<!--
+Show first video
+
+Show Photos
+
+Show Playlist
+
+Show description
+
+Show Tags
+
+
+-->
+
+</ion-content>

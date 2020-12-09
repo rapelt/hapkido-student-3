@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-list-header>Up Next</ion-list-header>
+  <ion-item [button]="true" (click)="goToNewVideo(video)" *ngFor="let video of videos" [ngClass]="{'current-video':video.id === currentVideo}">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="getThumbnail(video)"></ion-img>
+    </ion-thumbnail>
+    <ion-label>{{video.original_file_name}}</ion-label>
+  </ion-item>
+
+  <ion-list-header>Next Technique</ion-list-header>
+  <ion-item [button]="true" (click)="goToTechnique(technique.id)" *ngFor="let technique of nextTechniques">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="getThumbnailForTechnique(technique)"></ion-img>
+    </ion-thumbnail>
+    <ion-label>{{technique.title}}</ion-label>
+  </ion-item>
+</ion-list>

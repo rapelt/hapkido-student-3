@@ -9,6 +9,7 @@ export const environment = {
 };
 
 export const config: EnvironementModel = {
+    projectName: 'Hapkido Brisbane Students',
     environmentName: 'Test Environment',
     ionicEnvName: 'test',
     APIEndpoint: 'http://localhost:8080/',
