@@ -9,14 +9,16 @@ import { techniqueTestData } from '../../zTestData/techniques.test.data';
 import { TechniqueStoreServiceMock } from '../../+state/Techniques/technique-store.service.mock';
 import { SettingsStoreService } from '../../+state/Settings/settings-store.service';
 import { SettingsStoreServiceMock } from '../../+state/Settings/settings-store.service.mock';
+import { ClassStoreService } from '../../+state/Classes/class-store.service';
+import { ClassStoreServiceMock } from '../../+state/Classes/class-store.service.mock';
 
 describe('Upcoming Classes', () => {
     beforeEach(() =>
         TestBed.configureTestingModule({
             providers: [
                 {
-                    provide: TechniqueStoreService,
-                    useClass: TechniqueStoreServiceMock,
+                    provide: ClassStoreService,
+                    useClass: ClassStoreServiceMock,
                 },
                 {
                     provide: SettingsStoreService,
