@@ -1,0 +1,88 @@
+.categories-title {
+  margin: 10px 10px 0px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+// Buttons
+
+.categories-button {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+@media screen and (max-width: 600px) {
+  .categories-button {
+    justify-content: center;
+  }
+}
+
+.category-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px 5px 10px 5px;
+
+  .button-text {
+    width: 85px;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .category-button {
+    width: 85px;
+    height: 85px;
+
+    ion-icon {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+}
+
+.technique-guide {
+  ion-button {
+    --background: #7ACBFA;
+  }
+}
+
+.favourites {
+  ion-button {
+    --background: #F5C164;
+  }
+}
+
+.profile {
+  ion-button {
+    --background: #D779DF;
+  }
+}
+
+.website {
+  ion-button {
+    --background: #64F5E4;
+  }
+}
+.other {
+  ion-button {
+    --background: #79DF80;
+  }
+}
+
+.timetable {
+  ion-button {
+    --background: #7A9CFA;
+  }
+}
+
+.newsletter {
+  ion-button {
+    --background: #C1EE79;
+  }
+}
+
+
+
+

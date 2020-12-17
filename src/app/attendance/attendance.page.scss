@@ -1,0 +1,24 @@
+ion-item-divider {
+  background: var(--ion-color-primary-shade, #114fa4);
+  color: white;
+  text-align: center;
+}
+
+ion-item {
+  background-color: var(--ion-color-primary-tint, #e0e6f4);
+  --background: var(--ion-color-primary-tint, #e0e6f4);
+  padding-left: 20px;
+  text-align: center;
+  padding-right: 20px;
+
+  ion-text {
+    font-weight: bold;
+    margin-left: 40px;
+  }
+}
+
+.divider-text {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}

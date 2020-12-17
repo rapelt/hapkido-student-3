@@ -38,6 +38,9 @@ describe('TechniquePage', () => {
                                 return '1';
                             },
                         }),
+                        snapshot: {
+                            _lastPathIndex: 7,
+                        },
                     },
                 },
             ],

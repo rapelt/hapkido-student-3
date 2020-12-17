@@ -13,6 +13,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          "allowedCommonJsDependencies": [
+            "observable-store"
+          ],
           "options": {
             "outputPath": "www",
             "index": "src/index.html",

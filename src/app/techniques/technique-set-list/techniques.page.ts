@@ -57,7 +57,7 @@ export class TechniquesPage implements OnInit, OnDestroy {
 
     goToTechniques(tech: TechniqueSetData) {
         this.selector.setTechniqueFilter(
-            this.segment + '/' + tech.techniqueSetId
+            'list/' + this.segment + '/' + tech.techniqueSetId
         );
         this.router.navigate([
             '/technique/list/' + this.segment + '/' + tech.techniqueSetId,

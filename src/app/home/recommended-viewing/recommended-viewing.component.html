@@ -1,0 +1,19 @@
+<!--<div *ngFor="let technique of techniques$ | async">-->
+<!--  <ion-card>-->
+<!--    <ion-img>{{technique.title}}</ion-img>-->
+
+<!--    <ion-card-title>{{technique.title}}</ion-card-title>-->
+
+<!--  </ion-card>-->
+<!--</div>-->
+
+<div class="recommended-title">Recommended Techniques</div>
+<div class="playlist">
+  <ion-card *ngFor="let tech of techniques$ | async" [button]="true" [disabled]="!tech.isAvailable" (click)="goToTechnique(tech.id)">
+    <img [src]="getSrc(tech)">
+    <div class="title">{{tech.title}}</div>
+
+  </ion-card>
+</div>
+
+

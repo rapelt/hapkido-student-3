@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button [defaultHref]="'/techniques'" class="cy-back-button"></ion-back-button>
+      <ion-back-button [defaultHref]="'/technique'" class="cy-back-button"></ion-back-button>
     </ion-buttons>
     <ion-title>{{title | async}}</ion-title>
   </ion-toolbar>
@@ -10,7 +10,7 @@
 <ion-content>
     <div class="cards">
       <ion-card *ngFor="let tech of techniques$ | async" [button]="true" [disabled]="!tech.isAvailable" (click)="goToTechnique(tech.id)">
-        <img src="../../../assets/shapes.svg">
+        <img [src]="getSrc(tech)">
         <ion-item lines="none">
           <app-grade-badge slot="start" [grade]="tech.grade" [nameLength]="'short'"></app-grade-badge>
           <ion-card-header>

@@ -1,0 +1,15 @@
+
+<div class="upcoming-classes-title">Upcoming Classes</div>
+
+<div class="aclass-group">
+  <div *ngFor="let aclass of classes$ | async; let i = index">
+    <ng-container *ngIf="(deviceWidth < 500 && i < 3) || deviceWidth > 500">
+      <div  class="aclass-container">
+        <div class="date data">{{aclass.date | date : 'dd MMM'}}</div>
+        <div class="time data">{{aclass.date | date: 'h:mm aa'}}</div>
+        <div class="class-type data">{{aclass.classType}}</div>
+      </div>
+    </ng-container>
+  </div>
+
+</div>

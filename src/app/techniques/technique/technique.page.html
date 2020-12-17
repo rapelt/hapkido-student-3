@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="backGoTo(technique?.backLink)" routerDirection="back" class="cy-back-button">
+      <ion-button [routerLink]="['../' + technique?.backLink]" routerDirection="back" class="cy-back-button">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
