@@ -1,0 +1,27 @@
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 10;
+  position: relative;
+  margin-top: -45px;
+  margin-left: 10px;
+  color: white;
+}
+
+ion-card {
+  width: 260px;
+  height: 145px;
+  display: inline-table;
+}
+
+.recommended-title {
+  margin: 10px 10px 0px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.playlist {
+  display: flex;
+  overflow-x: auto;
+  flex-flow: nowrap;
+}

@@ -26,7 +26,7 @@ export class TechniqueStoreService extends ObservableStore<StateModel> {
                 const state: TechniquesStoreModel = {
                     techniques: techniques,
                     playlist: playlist,
-                    techniqueFilter: 'favourites',
+                    techniqueFilter: 'list/favourites',
                 };
                 this.setState(
                     { techniques: state },

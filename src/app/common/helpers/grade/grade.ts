@@ -1,5 +1,6 @@
 import { GradeModel } from '../../models/grade.model';
 import { Injectable } from '@angular/core';
+import { GradingDatesModel } from '../../models/grading-dates';
 
 @Injectable()
 export class GradeHelper {
@@ -136,5 +137,17 @@ export class GradeHelper {
 
     static getCssClass(id) {
         return GradeHelper.grades[id].cssClass;
+    }
+
+    static sort(array: GradingDatesModel[]): GradingDatesModel[] {
+        return array.sort((a, b) => {
+            if (a.grade < b.grade) {
+                return 1;
+            }
+            if (a.grade > b.grade) {
+                return -1;
+            }
+            return 0;
+        });
     }
 }

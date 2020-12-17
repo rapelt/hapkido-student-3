@@ -4,10 +4,30 @@ ion-card-header{
   padding-left: 0;
 }
 
-img {
-  max-width: 100%;
-  border: 0;
-  width: 100%;
+
+
+@media screen and (min-width: 420px) {
+  img {
+    border: 0;
+    width: 400px;
+    height: 225px;
+  }
+
+  ion-card {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  img {
+    border: 0;
+    width: 300px;
+    height: 168px;
+  }
+
+  ion-card {
+    width: 300px;
+  }
 }
 
 app-grade-badge, ion-card-title {
@@ -15,20 +35,8 @@ app-grade-badge, ion-card-title {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
-
-}
-
-@media screen and (min-width: 600px) {
-  ion-card {
-    width: 400px;
-  }
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

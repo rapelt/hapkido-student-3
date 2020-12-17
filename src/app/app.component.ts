@@ -161,7 +161,7 @@ export class AppComponent implements OnInit {
         }
 
         console.log('Sign in is at url: ', this.router.url);
-        if (this.router.url === '/authentication/sign-in') {
+        if (this.router.url === '/sign-in') {
             console.log('Navigating to home: ', '/home');
             this.router.navigateByUrl('/home');
         }

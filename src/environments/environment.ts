@@ -11,7 +11,6 @@ export const environment = {
 const local = 'http://localhost:8090/';
 // const local = 'http://192.168.43.172:8090/';
 
-
 export const config: EnvironementModel = {
     projectName: 'Hapkido Brisbane Students',
     environmentName: 'Local Environment',

@@ -43,6 +43,10 @@ export class TechniqueSelector {
                         return tech.id === id;
                     });
 
+                    if (technique === null) {
+                        return null;
+                    }
+
                     let playlist = [];
 
                     if (state.techniques.playlist) {

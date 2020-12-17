@@ -67,7 +67,11 @@ export class TechniquePage implements OnInit, OnDestroy {
     }
 
     backGoTo(location) {
-        this.router.navigate(['/technique/list/' + location]);
+        if (location) {
+            this.router.navigate(['/technique/list/' + location]);
+        } else {
+            this.router.navigate(['/technique']);
+        }
     }
 
     ngOnDestroy() {

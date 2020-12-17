@@ -1,0 +1,52 @@
+ion-item-divider {
+  background: var(--ion-color-primary-shade, #114fa4);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+ion-item {
+  ion-text {
+    margin-left: 40px;
+  }
+
+  ion-label {
+    padding-left: 20px;
+  }
+}
+
+.divider-text {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.red {
+  --background: #ee7b79;
+  color: black;
+}
+
+.blue {
+  --background: #0093FF;
+  color: white;
+
+}
+
+.yellow {
+  --background: #fdda3e;
+  color: black;
+
+}
+
+.white {
+  --background: #e0e6f4;
+  color: black;
+
+
+}
+
+.black {
+  --background: black;
+  color: white;
+
+}

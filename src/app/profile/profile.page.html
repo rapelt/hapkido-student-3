@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="student$ | async as student">
+    <div class="header">
+      <div class="blue-background"></div>
+      <div class="half-circle"></div>
+      <ion-avatar>
+        <img src="./assets/avatar.svg">
+      </ion-avatar>
+      <div class="name">{{student.name.firstname}} {{student.name.lastname}}</div>
+      <app-grade-badge [grade]="student.grade" [nameLength]="'long'"></app-grade-badge>
+    </div>
+
+    <div class="information">
+      <ion-list>
+        <ion-item>
+          <ion-label>ID:</ion-label>
+          <ion-text>{{student.hbId}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Preferred Class:</ion-label>
+          <ion-text>{{student.preferredClass}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-text>{{student.email}}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Joining Date:</ion-label>
+          <ion-text>{{student.gradingDates[student.gradingDates.length - 1].date | date : 'dd/MMM/yyyy'}}</ion-text>
+        </ion-item>
+
+        <ion-item *ngIf="auth$ | async as auth">
+          <ion-label>Email Verified</ion-label>
+          <ion-text>{{userEmailVerified(auth.userAttributes)?.emailVerified === 'true' ? 'Yes' : 'No'}}</ion-text>
+        </ion-item>
+
+        <div *ngIf="auth$ | async as auth">
+          <div *ngIf="userEmailVerified(auth.userAttributes)?.emailVerified === 'false'">
+            <div>
+              <p class="cy-email-is-not-verified"><b>To make sure you can reset your password we need to make sure your email is verified.</b></p>
+              <ion-button class="cy-send-email-verify-code" expand="block" (click)="sendCode()">Send Code</ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-list>
+
+
+
+    </div>
+  </div>
+
+
+</ion-content>

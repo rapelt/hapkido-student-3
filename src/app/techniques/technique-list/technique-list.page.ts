@@ -45,6 +45,23 @@ export class TechniqueListPage implements OnInit, OnDestroy {
         );
     }
 
+    getSrc(technique: TechniqueModel) {
+        const video = technique.media.findIndex((m) => {
+            return m.folder.includes('video');
+        });
+
+        if (video === -1) {
+            return '../../../assets/shapes.svg';
+        }
+
+        return (
+            technique.media[video].url +
+            'Thumbnails/' +
+            technique.media[video].file_name +
+            '.0000001.jpg'
+        );
+    }
+
     getTitle() {
         if (this.setType === 'color') {
             this.title = of(GradeHelper.getLongDisplayName(this.setId));
